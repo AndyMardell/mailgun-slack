@@ -12,8 +12,10 @@ exports.handler = async (event, context, callback) => {
         from ${mailgunError.message.headers.from}. Event: ${mailgunError.event}`
       }
     )
+    console.log('No error')
     callback(null, 'OK')
   } catch (err) {
+    console.log('error', err)
     throw new Error(err)
   }
 }

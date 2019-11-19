@@ -1,5 +1,5 @@
 const axios = require('axios')
-const generateResponse = require('../lib/generateResponse')
+const generateResponse = require('./lib/generateResponse')
 
 exports.handler = async (event, context, callback) => {
   const body = JSON.parse(event.body)

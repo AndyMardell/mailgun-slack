@@ -11,18 +11,21 @@ You can create a new Slack webhook using [the webhook app](https://api.slack.com
 
 If you're zipping your function up, you first need to install your node modules
 
-`npm i --production`
+```bash
+npm i --production
+```
 
 ## Zip up or deploy
 
-Zip up all files or deploy to AWS Lambda.
+Zip all files or deploy to AWS Lambda
 
 ## Add env variables
 
-There area a couple of environment variabless which need adding to your lambda
+There area a couple of environment variables which need adding to your lambda
 instance:
 
-```SLACK_WEBHOOK=https://hooks.slack.com/your/webhookurl
+```
+SLACK_WEBHOOK=https://hooks.slack.com/your/webhookurl
 MAILGUN_API_KEY=private-mailgun-api-key
 ```
 

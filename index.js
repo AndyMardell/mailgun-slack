@@ -1,14 +1,12 @@
 const https = require('https')
 
 exports.handler = (event, context, callback) => {
-  const mailgunEvent = JSON.parse(event)
+  const mailgunEvent = JSON.parse(event.body)
   const mailgunError = mailgunEvent['event-data']
 
-  console.log(mailgunError)
-
   const payload = JSON.stringify({
-    text: 'Something went wrong on Mailgun',
-    icon_emoji: ':email:'
+    text: `There was a problem sending mail to ${mailgunError.recipient} from
+      ${mailgunError.message.headers.from}. Event: ${mailgunError.event}`
   })
 
   const options = {

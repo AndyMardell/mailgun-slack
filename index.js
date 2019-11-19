@@ -5,6 +5,8 @@ exports.handler = async (event, context, callback) => {
   const body = JSON.parse(event.body)
   const data = body['event-data']
 
+  console.log(body)
+
   try {
     await axios.post(process.env.SLACK_WEBHOOK, {
       text: `There was a problem sending mail to ${data.recipient}

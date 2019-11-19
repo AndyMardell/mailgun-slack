@@ -15,11 +15,11 @@ If you're zipping your function up, you first need to install your node modules
 npm i --production
 ```
 
-## Zip up or deploy
+## Zip or deploy
 
-Zip all files or deploy to AWS Lambda
+Zip all files or deploy to AWS Lambda however you would normally.
 
-## Add env variables
+## Add environment variables
 
 There area a couple of environment variables which need adding to your lambda
 instance:

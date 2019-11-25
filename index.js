@@ -7,7 +7,10 @@ exports.handler = async (event, context, callback) => {
   const data = body['event-data']
 
   try {
-    verifyKey(body.signature)
+    if (!verifyKey(body.signature)) {
+      throw new Error('Invalid key')
+    }
+
     await axios.post(process.env.SLACK_WEBHOOK, {
       text: `There was a problem sending mail to ${data.recipient}
         from ${data.message.headers.from}. Event: ${data.event}`
